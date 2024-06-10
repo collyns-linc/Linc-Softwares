@@ -3,7 +3,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     // const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
 
-    const response = await fetch('http://127.0.0.1:8000/submit', {
+    const response = await fetch('https://email.lincsoftwares.tech/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
