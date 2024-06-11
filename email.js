@@ -12,5 +12,19 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     });
 
     const result = await response.json();
-    alert(result.message);
+    const message = document.getElementById('message');
+
+    if (response.ok) {
+        message.style.display = 'block';
+        message.style.color = 'green';
+        message.textContent = result.message
+
+        setTimeout(() => {
+            location.reload();
+        }, 3000);
+    } else {
+        message.style.display = 'block';
+        message.style.color = 'red';
+        message.textContent = result.detail;
+    }
 });
